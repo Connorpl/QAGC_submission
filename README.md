@@ -1,4 +1,4 @@
-# KCL TEAM: Classical Pre-processing: Overview of the Hyperparameter Optimisation Algorithm (2024 Challenge)
+# KCL TEAM: Classical Pre-processing: Overview of the Hyperparameter Optimisation Algorithm (2024 Quantum Algorithm Grand Challenge)
 
 ### Authors:
 - Avner Bensoussan
