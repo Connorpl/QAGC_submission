@@ -1,6 +1,41 @@
-# Install KCL Solution
+# KCL TEAM: Classical Pre-processing: Overview of the Hyperparameter Optimisation Algorithm (2024 Challenge)
 
-Python3 version: 3.10.14.
+### Authors:
+- Avner Bensoussan
+- Elena Chachkarova
+- Karine Even-Mendoza
+- Sophie Fortz
+- Connor Lenihan
+
+### Affiliation:
+King's College London, Faculty of NMES  
+June 2024
+
+---
+
+## Overview
+
+The provided algorithm optimises hyperparameters for a quantum problem by leveraging a Regularising Gradient Boosting Regression (XGBoost), divided into three stages: data preparation, model training, and hyperparameter optimisation.
+
+### Data Preparation
+
+We add open-source commonly used molecular Hamiltonians (H2O, LiH, BeH2, Hc, and H chain) and combine them with the provided Hamiltonians of 20 qubits or less. The wrapper is run in classical mode while giving a randomly generated set of hyperparameters each time, recording the energy level as the score. This process is repeated to produce a data array for training a Regularising Gradient Boosting Regression (XGBoost). The generated data—consisting of hyperparameter vectors (Xs) and their corresponding energy levels (Ys)—is stored for further processing.
+
+### Model Training
+
+Our algorithm uses an XGBoost model to predict the best hyperparameters. Before training, it ensures all data vectors are of consistent length by padding them as needed. The padded data array is split into training and testing sets. The model is then trained, tested, and evaluated for performance.
+
+### Hyperparameter Optimisation
+
+With the XGBoost model trained, the algorithm proceeds to predict the optimal hyperparameters for a given Hamiltonian of 28 qubits. It generates a series of hyperparameter vectors and uses the XGBoost model to predict their performance. The vector with the minimum score (predicted energy level) is returned as the optimal set of hyperparameters. Finally, the algorithm runs adapt-QSCI with the optimised hyperparameters.
+
+### Install KCL Solution
+
+- Python3 version: 3.10.14.
+
+
+# **The original challenge is below.**
+---
 
 # Quantum Algorithm Grand Challenge
 
