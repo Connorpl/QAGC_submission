@@ -33,6 +33,8 @@ import numpy as np
 import scipy
 from scipy.sparse import coo_matrix
 from random import randint
+import xgboost as xgb
+os.environ['KMP_DUPLICATE_LIB_OK']='True'
 
 ### for Regressor 
 from datetime import datetime
