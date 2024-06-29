@@ -1211,9 +1211,9 @@ class RunAlgorithm:
         param_bool_2 = True if round(res_opt[5]) != 0 else False
         wrapper=Wrapper(n_qubits, ham, True, True, round(res_opt[3]), res_opt[4], param_bool_2,
                       # n_qubits, ham, True, True, 100,               0.001,      False,  
-                            round(res_opt[6]), round(res_opt[7]), res_opt[8],
+                            round(res_opt[6]), round(res_opt[7]), min([res_opt[8],1e-7]),
                       #     100,               10**5,             1e-6,  
-                            round(res_opt[9]), round(res_opt[10]), round(res_opt[11]), round(res_opt[12]))
+                            round(res_opt[9]), round(res_opt[10]), 4, round(res_opt[12]))
                       #     5,                 128,                2,                  0
         
         # wrapper = Wrapper(n_qubits, ham, True, res_opt[1], res_opt[2], res_opt[3], res_opt[4], res_opt[5], res_opt[6], res_opt[7], 
