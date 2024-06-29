@@ -1037,7 +1037,7 @@ def regressor(opt_n_qubit, opt_seed, folder_path):
                         y_vec=wrapper.get_result(seed=0, hamiltonian_directory="../hamiltonian")
                     # Did code finish running in under 180 seconds?
                     if context_manager.state == context_manager.TIMED_OUT:
-                       y_vec=15.0
+                       y_vec=3.0
                        print_to_file("Y is 0 due to timeout")
 
                 except Exception as e:
@@ -1045,7 +1045,7 @@ def regressor(opt_n_qubit, opt_seed, folder_path):
                     print_to_file("Y is 0 due to exception")
 
                 # Add data to X and Y sets
-                if y_vec < 0.0:
+                if not (y_vec == 0.0):
                     x_vec = np.append(x_vec_params, ham_vec)
                     X.append(x_vec)  # Parameters and ham as a vector
                     Y.append(y_vec)  # E level classically
@@ -1088,7 +1088,7 @@ def regressor(opt_n_qubit, opt_seed, folder_path):
         'alpha': 0.1,           # L1 regularization term on weights
         'lambda': 0.1           # L2 regularization term on weights
     }
-    chunk_size=7
+    chunk_size=9
     num_chunks=len(X)//chunk_size
     print (">>> Train the model with size ", str(chunk_size))
 
@@ -1198,7 +1198,7 @@ class RunAlgorithm:
         ###final_sampling_shots_coeff, int definitely > 0 and probably < 10
         ###num_precise_gradient, int definitely >0 
         ###max_num_converged, int definitely > 1
-        ###reset_ignored_inx_mode, int deffinitely >=0
+        ###reset_ignored_inx_mode, int definitely >=0
 
         """
         ####################################
