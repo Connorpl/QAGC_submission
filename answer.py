@@ -31,6 +31,7 @@ from quri_parts.qulacs.sampler import create_qulacs_vector_sampler
 from openfermion import FermionOperator as FO
 import numpy as np
 import scipy
+import copy
 from scipy.sparse import coo_matrix
 from random import randint
 import xgboost as xgb
