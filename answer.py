@@ -32,6 +32,7 @@ from openfermion import FermionOperator as FO
 import numpy as np
 import scipy
 import copy
+import os
 from scipy.sparse import coo_matrix
 from random import randint
 import xgboost as xgb
