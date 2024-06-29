@@ -37,6 +37,12 @@ With the XGBoost model trained, the algorithm proceeds to predict the optimal hy
   git clone https://github.com/QunaSys/quantum-algorithm-grand-challenge-2024.git
   ```
   and copy the rest of the files so answer.py works. Copy answer.py into the problem folder.
+- Install the requirements:
+```
+sudo apt install python3-pip
+pip3 install --upgrade pip
+pip3 install -r requirements.txt
+```
 
 # **The original challenge is below.**
 ---
