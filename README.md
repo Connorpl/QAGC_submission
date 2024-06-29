@@ -43,6 +43,13 @@ sudo apt install python3-pip
 pip3 install --upgrade pip
 pip3 install -r requirements.txt
 ```
+and then before running define a 4 GB swap (if there is none yet)
+```
+sudo fallocate -l 4G /swapfile
+sudo chmod 600 /swapfile
+sudo mkswap /swapfile
+sudo swapon /swapfile
+```
 
 # **The original challenge is below.**
 ---
