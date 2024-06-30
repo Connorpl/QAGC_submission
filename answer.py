@@ -751,15 +751,23 @@ def ham_to_vector(ham):
     if isinstance(ham, FO):
         # Extract the terms and coefficients
         terms = ham.terms
-
-        # print("First term: " + terms[0])
         vector = flatten(flatten(terms))
+        vector = [element for element in vector if not (-1.0 <= element <= 1.0)]
+        # pick top 1000 - check on ABS
+        sorted_vector = np.sort(vector)
+        # Check if the vector has more than 1000 elements
+        # if len(sorted_vector) > 3000:
+            # Get the first 500 and the last 500 elements
+        #     upper = sorted_vector[:900].any()
+        #     lower = sorted_vector[-600:].any()
+        #     vector = [element for element in vector if (element >=upper or element <=lower)]
 
         # Iterate over the terms and their coefficients
         for term, coefficient in terms.items():
             vector.append(float(coefficient.real))
 
         ##  Convert to a numpy array
+        vector = [element for element in vector if not (-0.1 <= element <= 0.1)]
         vector = np.array(flatten(vector), order='C', dtype=float)
 
         # Print to log
@@ -1084,7 +1092,7 @@ def regressor(opt_n_qubit, opt_seed, folder_path):
     params = {
         'objective': 'reg:pseudohubererror',
         'max_depth': 5,
-        'learning_rate': 0.05,
+        'learning_rate': 0.04,
         'n_estimators': 55,     # Number of trees to fit
         'alpha': 0.1,           # L1 regularization term on weights
         'lambda': 0.1           # L2 regularization term on weights
