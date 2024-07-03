@@ -1219,7 +1219,7 @@ class RunAlgorithm:
         res_opt = regressor(n_qubits, seed, hamiltonian_directory)
         # The call to the VQE
         param_bool_2 = True if round(res_opt[5]) != 0 else False
-        wrapper=Wrapper(n_qubits, ham, True, True, round(res_opt[3]), res_opt[4], param_bool_2,
+        wrapper=Wrapper(n_qubits, ham, False, True, round(res_opt[3]), res_opt[4], param_bool_2,
                       # n_qubits, ham, True, True, 100,               0.001,      False,  
                             round(res_opt[6]), round(res_opt[7]), min([res_opt[8],1e-7]),
                       #     100,               10**5,             1e-6,  
