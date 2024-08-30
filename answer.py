@@ -57,6 +57,59 @@ from utils.challenge_2024 import ChallengeSampling, problem_hamiltonian
 
 challenge_sampling = ChallengeSampling()
 
+
+"""
+Competition Hamiltonians:
+Available Parameter seed
+[0, 1, 2, 3, 4]
+
+reference values (n_qubits: reference_value)
+4: -4.00000000, 
+12: -13.433353608,
+20: -22.046059902,
+28: -30.748822808,
+
+Hemocyanin Hamiltonians:
+
+Available Parameter seed
+[5]
+
+reference values (n_qubits: reference_value)
+6: -0.751126955551, 
+8: -0.751126955551,
+10: -0.751126955551,
+14: -0.751126955551,
+16: -0.751126955551,
+
+H-chain Hamiltonians:
+
+reference values[seed] (n_qubits: reference_value)
+2[5]: , 
+4[5]: ,
+6[7]: ,
+8[6]: ,
+10[6]: ,
+12[5]: ,
+14[6]: ,
+16[6]: ,
+
+H2O Hamiltonian:
+
+reference values[seed] (n_qubits: reference_value)
+7[6]:
+
+LiH Hamiltonian:
+
+reference values[seed] (n_qubits: reference_value)
+6[6]:
+
+BeH2 Hamiltonian:
+
+reference values[seed] (n_qubits: reference_value)
+6[6]:
+"""
+
+
 class Solver:
     def __init__(
         self,
